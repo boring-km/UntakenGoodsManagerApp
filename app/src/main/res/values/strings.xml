@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">미지급 상품 관리</string>
+    <string name="input_address">입력하기 (Input)</string>
+    <string name="create">create</string>
+    <string name="rescan">다시 스캔하기\n(Re-Scan)</string>
+    <string name="clipboard">Clipboard</string>
+    <string name="save">저장(Save)</string>
+    <string name="backward">돌아가기\n(Back)</string>
+    <string name="product_list">목록 확인</string>
+    <string name="qr_n_register">미지급 상품 등록</string>
+    <string name="qr_n_check">미지급 상품 확인</string>
+    <string name="qr_code_title">미지급 상품 관리</string>
+    <string name="load_image">Load Image</string>
+</resources>
