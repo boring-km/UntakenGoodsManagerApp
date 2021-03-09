@@ -17,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         activateBackgroundAnimation()
 
+        productList_Button.setOnClickListener {
+            val moveToCreateActivity = Intent(this@MainActivity, ProductListActivity::class.java)
+            startActivity(moveToCreateActivity)
+
+            overridePendingTransition(R.anim.fade_in_anim, R.anim.fade_out_anim)
+        }
+
         registerQR_Button.setOnClickListener {
             val moveToCreateActivity = Intent(this@MainActivity, InputActivity::class.java)
             startActivity(moveToCreateActivity)

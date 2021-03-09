@@ -6,9 +6,10 @@
     <string name="clipboard">Clipboard</string>
     <string name="save">저장(Save)</string>
     <string name="backward">돌아가기\n(Back)</string>
-    <string name="product_list">목록 확인</string>
-    <string name="qr_n_register">미지급 상품 등록</string>
-    <string name="qr_n_check">미지급 상품 확인</string>
+    <string name="product_list_check">목록 확인</string>
+    <string name="qr_n_register">상품 등록</string>
+    <string name="qr_n_check">상품 확인</string>
     <string name="qr_code_title">미지급 상품 관리</string>
     <string name="load_image">Load Image</string>
+    <string name="product_list">상품 목록</string>
 </resources>

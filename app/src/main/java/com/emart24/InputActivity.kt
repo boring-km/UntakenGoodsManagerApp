@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_register.*
+import java.security.MessageDigest
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class InputActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,10 +18,9 @@ class InputActivity: AppCompatActivity() {
 
             val name: String = productNameEditText.text.toString()
             val phone: String = phoneEditText.text.toString()
-
             moveToCreateActivity.putExtra("name", name)
             moveToCreateActivity.putExtra("phone", phone)
-            moveToCreateActivity.putExtra("qrcode", "1h12g35g87rg323u97")
+//            moveToCreateActivity.putExtra("qrcode", )
 
             startActivity(moveToCreateActivity)
         }
