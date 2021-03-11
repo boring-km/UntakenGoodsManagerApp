@@ -24,11 +24,9 @@ open class CreateQRActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_qr)
 
-        val name = intent.getStringExtra("name")
-        val phone = intent.getStringExtra("phone")
         val qrcodeData = intent.getStringExtra("qrcode")
 
-        Toast.makeText(this, "이름은 $name 전화번호 뒷자리는 $phone", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, qrcodeData, Toast.LENGTH_LONG).show()
         createQRCodeImage(qrcodeData!!)
     }
 

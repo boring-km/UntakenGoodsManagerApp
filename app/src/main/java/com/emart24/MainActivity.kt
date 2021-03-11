@@ -5,6 +5,8 @@ import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.emart24.component.DaggerGoodsComponent
+import com.emart24.service.GoodsModule
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

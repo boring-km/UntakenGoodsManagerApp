@@ -21,6 +21,7 @@
                   tools:replace="screenOrientation"/>
         <activity android:name=".CreateQRActivity"/>
         <activity android:name=".InputActivity"/>
+        <activity android:name=".GoodsResultActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
