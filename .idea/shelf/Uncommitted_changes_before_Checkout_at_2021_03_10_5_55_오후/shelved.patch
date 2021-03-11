@@ -1,0 +1,141 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AndroidLayouts\">\n    <shared>\n      <config />\n    </shared>\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"35d068f8-5184-4b5c-b59b-e46ff7b2f2c1\" name=\"Default Changelist\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"LMV510N29076c3a\" />\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin Class\" />\n        <option value=\"layoutResourceFile\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$USER_HOME$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1pN3uJRT8gOzuBBNCpLaUxSdvmc\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"dart.analysis.tool.window.visible\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"project.structure.last.edited\" value=\"SDKs\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.5968064\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"project.propVCSSupport.Mappings\" />\n    <property name=\"show.migrate.to.gradle.popup\" value=\"false\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/app/src/main/res\" />\n      <recent name=\"$PROJECT_DIR$/app/src/main/java/com/emart24\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"UntakenGoodsManagerApp.app\" type=\"AndroidRunConfigurationType\" factoryName=\"Android App\" activateToolWindowBeforeRun=\"false\">\n      <module name=\"UntakenGoodsManagerApp.app\" />\n      <option name=\"DEPLOY\" value=\"true\" />\n      <option name=\"DEPLOY_APK_FROM_BUNDLE\" value=\"false\" />\n      <option name=\"DEPLOY_AS_INSTANT\" value=\"false\" />\n      <option name=\"ARTIFACT_NAME\" value=\"\" />\n      <option name=\"PM_INSTALL_OPTIONS\" value=\"\" />\n      <option name=\"DYNAMIC_FEATURES_DISABLED_LIST\" value=\"\" />\n      <option name=\"ACTIVITY_EXTRA_FLAGS\" value=\"\" />\n      <option name=\"MODE\" value=\"default_activity\" />\n      <option name=\"CLEAR_LOGCAT\" value=\"false\" />\n      <option name=\"SHOW_LOGCAT_AUTOMATICALLY\" value=\"false\" />\n      <option name=\"SKIP_NOOP_APK_INSTALLATIONS\" value=\"true\" />\n      <option name=\"FORCE_STOP_RUNNING_APP\" value=\"true\" />\n      <option name=\"TARGET_SELECTION_MODE\" value=\"DEVICE_AND_SNAPSHOT_COMBO_BOX\" />\n      <option name=\"DEBUGGER_TYPE\" value=\"Java\" />\n      <Java />\n      <Profilers>\n        <option name=\"ADVANCED_PROFILING_ENABLED\" value=\"false\" />\n        <option name=\"STARTUP_CPU_PROFILING_ENABLED\" value=\"false\" />\n        <option name=\"STARTUP_CPU_PROFILING_CONFIGURATION_NAME\" value=\"Sample Java Methods\" />\n      </Profilers>\n      <option name=\"DEEP_LINK\" value=\"\" />\n      <option name=\"ACTIVITY_CLASS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Android.Gradle.BeforeRunTask\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"35d068f8-5184-4b5c-b59b-e46ff7b2f2c1\" name=\"Default Changelist\" comment=\"\" />\n      <created>1615009943789</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1615009943789</updated>\n      <workItem from=\"1615009950728\" duration=\"2349000\" />\n      <workItem from=\"1615013641623\" duration=\"3929000\" />\n      <workItem from=\"1615017613536\" duration=\"22000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <ignored-roots>\n      <path value=\"$USER_HOME$\" />\n    </ignored-roots>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 87bb58f78b9fadb67eb7066c40f95edc98e6e04a)
++++ b/.idea/workspace.xml	(date 1615366347739)
+@@ -9,13 +9,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="35d068f8-5184-4b5c-b59b-e46ff7b2f2c1" name="Default Changelist" comment="" />
++    <list default="true" id="35d068f8-5184-4b5c-b59b-e46ff7b2f2c1" name="Default Changelist" comment="">
++      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
++    <disabled>
++      <disabled_changelists>
++        <list default="true" id="35d068f8-5184-4b5c-b59b-e46ff7b2f2c1" name="Default Changelist" comment="" />
++      </disabled_changelists>
++      <disabled_trackers />
++    </disabled>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ExecutionTargetManager" SELECTED_TARGET="LMV510N29076c3a" />
++  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_29_2" />
+   <component name="ExternalProjectsData">
+     <projectState path="$PROJECT_DIR$">
+       <ProjectState />
+@@ -24,13 +33,18 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Kotlin Class" />
+         <option value="layoutResourceFile" />
++        <option value="Kotlin Class" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="JKM" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1pN3uJRT8gOzuBBNCpLaUxSdvmc" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -41,10 +55,12 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+     <property name="dart.analysis.tool.window.visible" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res" />
+     <property name="project.structure.last.edited" value="SDKs" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.5968064" />
+@@ -55,10 +71,15 @@
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/app/src/main/res" />
++      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+       <recent name="$PROJECT_DIR$/app/src/main/java/com/emart24" />
+     </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
++      <recent name="$PROJECT_DIR$/app/src/main/res/drawable/emart" />
++    </key>
+   </component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Gradle.RegisterTest.등록을_위한_암호화_테스트$app_debug">
+     <configuration name="UntakenGoodsManagerApp.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+       <module name="UntakenGoodsManagerApp.app" />
+       <option name="DEPLOY" value="true" />
+@@ -87,6 +108,33 @@
+         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="RegisterTest.등록을_위한_암호화_테스트$app_debug" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="--tests &quot;com.emart24.RegisterTest.등록을_위한_암호화_테스트$app_debug&quot;" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value="cleanTestDebugUnitTest" />
++            <option value="testDebugUnitTest" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Gradle.RegisterTest.등록을_위한_암호화_테스트$app_debug" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -98,8 +146,18 @@
+       <updated>1615009943789</updated>
+       <workItem from="1615009950728" duration="2349000" />
+       <workItem from="1615013641623" duration="3929000" />
+-      <workItem from="1615017613536" duration="22000" />
++      <workItem from="1615017613536" duration="804000" />
++      <workItem from="1615189097159" duration="1116000" />
++      <workItem from="1615190220185" duration="3922000" />
+     </task>
++    <task id="LOCAL-00001" summary="[master] 최초 master 커밋&#10;&#10;https://github.com/boring-km/QRCreateAndScan 에서 QR 코드 생성 및 스캔에 대한 주요 코드만 뽑아왔다.">
++      <created>1615017834683</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1615017834683</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

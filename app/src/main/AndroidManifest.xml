@@ -3,8 +3,6 @@
           xmlns:dist="http://schemas.android.com/apk/distribution"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.emart24">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
@@ -23,6 +21,7 @@
                   tools:replace="screenOrientation"/>
         <activity android:name=".CreateQRActivity"/>
         <activity android:name=".InputActivity"/>
+        <activity android:name=".GoodsResultActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
