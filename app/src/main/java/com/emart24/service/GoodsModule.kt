@@ -11,4 +11,9 @@ class GoodsModule {
         return GoodsService()
     }
 
+    @Provides
+    fun provideQRService(): QRService {
+        return QRService()
+    }
+
 }
