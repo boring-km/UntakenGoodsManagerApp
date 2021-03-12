@@ -1,48 +1,38 @@
 package com.emart24
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.emart24.bitmap.BitmapImage
-import com.emart24.bitmap.NoneQRCodeImage
-import com.emart24.bitmap.QRCodeImage
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.qrcode.QRCodeWriter
-import com.journeyapps.barcodescanner.BarcodeEncoder
+import com.emart24.component.DaggerGoodsComponent
+import com.emart24.service.GoodsModule
+import com.emart24.service.QRService
 import kotlinx.android.synthetic.main.activity_create_qr.*
+import javax.inject.Inject
 
 
-open class CreateQRActivity : AppCompatActivity() {
+class CreateQRActivity : AppCompatActivity() {
 
-    private var qrImage: BitmapImage = NoneQRCodeImage()
-    private lateinit var bitmap: Bitmap
+    @Inject
+    private lateinit var qrService: QRService
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_qr)
+        initializeDBService()
 
         val qrcodeData = intent.getStringExtra("qrcode")
-
         Toast.makeText(this, qrcodeData, Toast.LENGTH_LONG).show()
-        createQRCodeImage(qrcodeData!!)
+        val bitmap = qrService.createQR(qrcodeData)
+        qrcode_ImageView.setImageBitmap(bitmap)
     }
 
-    private fun createQRCodeImage(randomQRData: String) {
-        val writer = QRCodeWriter()
-        try {
-            val matrix = writer.encode(randomQRData, BarcodeFormat.QR_CODE, 300, 300)
-            val encoder = BarcodeEncoder()
-
-            bitmap = encoder.createBitmap(matrix)
-            qrImage = QRCodeImage()
-
-            qrcode_ImageView.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            Toast.makeText(applicationContext, "error", Toast.LENGTH_SHORT).show()
-        }
+    private fun initializeDBService() {
+        val component = DaggerGoodsComponent.builder()
+            .goodsModule(GoodsModule())
+            .build()
+        component.inject(this)
     }
 
     override fun onBackPressed() {

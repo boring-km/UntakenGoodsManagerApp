@@ -31,12 +31,9 @@ class InputActivity : AppCompatActivity() {
             val last4DigitsOfPhoneNumber: String = phoneEditText.text.toString()
             val nowDateTime = getNowDateTime()
             val qrData = goodsService.generateQRCode(last4DigitsOfPhoneNumber, nowDateTime)
-
-            // 객체 생성? 그냥 데이터 클래스이기 때문에 굳이 팩토리 메서드로 만들 필요가 있을까
             val unTakenGoods = UnTakenGoods(productName, last4DigitsOfPhoneNumber, qrData, nowDateTime, false)   // 서버로 전송
 
             goodsService.registerGoods(unTakenGoods, {
-                // DB 저장 후 결과를 putExtra 하자
                 moveToCreateActivity.putExtra("qrcode", qrData)
                 startActivity(moveToCreateActivity)
             }, {

@@ -8,48 +8,35 @@ import androidx.appcompat.app.AppCompatActivity
 import com.emart24.component.DaggerGoodsComponent
 import com.emart24.service.GoodsModule
 import com.emart24.service.GoodsService
-import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_scan_qr.*
 import javax.inject.Inject
 
 
 class ScanQRActivity : AppCompatActivity() {
 
-    private var qrScan: IntentIntegrator? = null
-
-    @Inject
-    lateinit var goodsService: GoodsService
+    @Inject private lateinit var goodsService: GoodsService
+    @Inject private lateinit var qrService: GoodsService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan_qr)
         initializeDBService()
-        scanning()
+        qrService.scanning(this)
 
         rescan_Button.setOnClickListener {
-            scanning()
+            qrService.scanning(this)
         }
         back_Button.setOnClickListener {
             finish()
         }
     }
 
-    private fun scanning() {
-        qrScan = IntentIntegrator(this)
-        qrScan!!.setOrientationLocked(false)
-            .setBarcodeImageEnabled(true)
-            .setPrompt("QR 코드 스캔")
-            .initiateScan()
-    }
-
     @Suppress("UNCHECKED_CAST")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-        if (result != null) {
-            if (result.contents == null) {
-                Toast.makeText(this, "인식못함", Toast.LENGTH_SHORT).show()
-                return
-            }
+        val result = qrService.parseActivityResult(requestCode, resultCode, data)
+        if (result.contents == null) {
+            Toast.makeText(this, "인식못함", Toast.LENGTH_SHORT).show()
+        } else {
             val qrCode = result.contents
             goodsService.findGoods(
                 qrCode, { documentSnapshot ->
