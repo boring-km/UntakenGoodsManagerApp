@@ -25,7 +25,7 @@ class InputActivity : AppCompatActivity() {
         initializeDBService()
 
         registerButton.setOnClickListener {
-            val moveToCreateActivity = Intent(this@InputActivity, CreateQRActivity::class.java)
+
 
             val productName: String = productNameEditText.text.toString()
             val last4DigitsOfPhoneNumber: String = phoneEditText.text.toString()
@@ -34,8 +34,10 @@ class InputActivity : AppCompatActivity() {
             val unTakenGoods = UnTakenGoods(productName, last4DigitsOfPhoneNumber, qrData, nowDateTime, false)   // 서버로 전송
 
             goodsService.registerGoods(unTakenGoods, {
+                val moveToCreateActivity = Intent(this@InputActivity, CreateQRActivity::class.java)
                 moveToCreateActivity.putExtra("qrcode", qrData)
                 startActivity(moveToCreateActivity)
+                finish()
             }, {
                 Toast.makeText(applicationContext, "등록 실패", Toast.LENGTH_SHORT).show()
             })
@@ -43,7 +45,7 @@ class InputActivity : AppCompatActivity() {
     }
 
     private fun getNowDateTime(): String {
-        val dateTimeFormat = SimpleDateFormat("YYYY:MM:DD hh:mm:ss")
+        val dateTimeFormat = SimpleDateFormat("YYYY년 MM월 dd일 hh시 mm분")
         return dateTimeFormat.format(Date(System.currentTimeMillis()))
     }
 

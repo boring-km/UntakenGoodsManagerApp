@@ -19,20 +19,20 @@ class MainActivity : AppCompatActivity() {
 
         productList_Button.setOnClickListener {
             val moveToCreateActivity = Intent(this@MainActivity, ProductListActivity::class.java)
-            startActivity(moveToCreateActivity)
 
+            startActivity(moveToCreateActivity)
             overridePendingTransition(R.anim.fade_in_anim, R.anim.fade_out_anim)
         }
 
         registerQR_Button.setOnClickListener {
             val moveToCreateActivity = Intent(this@MainActivity, InputActivity::class.java)
-            startActivity(moveToCreateActivity)
 
+            startActivity(moveToCreateActivity)
             overridePendingTransition(R.anim.fade_in_anim, R.anim.fade_out_anim)
         }
         scanQR_Button.setOnClickListener {
-            startActivity(Intent(this@MainActivity, ScanQRActivity::class.java))
 
+            startActivity(Intent(this@MainActivity, ScanQRActivity::class.java))
             overridePendingTransition(R.anim.fade_in_anim, R.anim.fade_out_anim)
         }
 
