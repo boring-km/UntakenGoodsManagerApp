@@ -1,9 +1,6 @@
 package com.emart24.service
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import com.emart24.model.UnTakenGoods
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -11,8 +8,6 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
 import java.security.MessageDigest
 import java.util.*
 
@@ -51,15 +46,4 @@ class GoodsService {
         return qrCode
     }
 
-    fun scanning(activity: Activity) {
-        val qrScan = IntentIntegrator(activity)
-        qrScan.setOrientationLocked(false)
-            .setBarcodeImageEnabled(true)
-            .setPrompt("QR 코드 스캔")
-            .initiateScan()
-    }
-
-    fun parseActivityResult(requestCode: Int, resultCode: Int, data: Intent?): IntentResult {
-        return IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-    }
 }
