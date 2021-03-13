@@ -8,14 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.emart24.component.DaggerGoodsComponent
 import com.emart24.service.GoodsModule
 import com.emart24.service.GoodsService
+import com.emart24.service.QRService
 import kotlinx.android.synthetic.main.activity_scan_qr.*
 import javax.inject.Inject
 
 
 class ScanQRActivity : AppCompatActivity() {
 
-    @Inject private lateinit var goodsService: GoodsService
-    @Inject private lateinit var qrService: GoodsService
+    @Inject lateinit var goodsService: GoodsService
+    @Inject lateinit var qrService: QRService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

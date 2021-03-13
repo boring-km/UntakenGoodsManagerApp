@@ -13,8 +13,7 @@ import javax.inject.Inject
 
 class CreateQRActivity : AppCompatActivity() {
 
-    @Inject
-    private lateinit var qrService: QRService
+    @Inject lateinit var qrService: QRService
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
