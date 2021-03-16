@@ -43,18 +43,21 @@ class ScanQRActivity : AppCompatActivity() {
                 qrCode, { documentSnapshot ->
                     val intent = Intent(this@ScanQRActivity, GoodsResultActivity::class.java)
                     val dataMap: Map<String, Any>? = documentSnapshot.data
-
-                    val isAccepted = dataMap!!.getOrDefault("accept", false)
-                    if (isAccepted != true) {
-                        intent.putExtra("productName", dataMap.getOrDefault("name", "").toString())
-                        intent.putExtra("dateTime", dataMap.getOrDefault("dateTime", "").toString())
-                        intent.putExtra("qrcode", dataMap.getOrDefault("qrcode", "").toString())
-                        startActivity(intent)
+                    if (dataMap != null) {
+                        val isAccepted = dataMap.getOrDefault("accept", false)
+                        if (isAccepted == false) {
+                            intent.putExtra("productName", dataMap.getOrDefault("name", "").toString())
+                            intent.putExtra("dateTime", dataMap.getOrDefault("dateTime", "").toString())
+                            intent.putExtra("qrcode", dataMap.getOrDefault("qrcode", "").toString())
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "해당 상품 이미 수령함", Toast.LENGTH_SHORT).show()
+                        }
                     } else {
                         Toast.makeText(this, "해당 상품 이미 수령함", Toast.LENGTH_SHORT).show()
                     }
                 }, { error ->
-                    Toast.makeText(this, "해당 상품 없음", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "에러!", Toast.LENGTH_SHORT).show()
                     Log.e("상품 스캔 오류", error.message.toString())
                 }
             )

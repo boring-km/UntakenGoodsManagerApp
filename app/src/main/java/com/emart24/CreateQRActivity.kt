@@ -22,9 +22,14 @@ class CreateQRActivity : AppCompatActivity() {
         initializeDBService()
 
         val qrcodeData = intent.getStringExtra("qrcode")
-        Toast.makeText(this, qrcodeData, Toast.LENGTH_LONG).show()
         val bitmap = qrService.createQR(qrcodeData)
         qrcode_ImageView.setImageBitmap(bitmap)
+
+        CloseButton.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.fade_in_anim, R.anim.fade_out_anim)
+        }
+
     }
 
     private fun initializeDBService() {
