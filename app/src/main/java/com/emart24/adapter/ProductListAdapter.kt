@@ -52,7 +52,7 @@ class ProductListAdapter: BaseAdapter(), Filterable {
         return convertView
     }
 
-    fun addItems(items: Array<UnTakenGoods>) {
+    fun addItems(items: ArrayList<UnTakenGoods>) {
         filteredList.addAll(items)
     }
 
