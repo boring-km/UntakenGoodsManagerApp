@@ -2,7 +2,6 @@ package com.emart24
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.emart24.component.DaggerGoodsComponent
 import com.emart24.service.GoodsModule
@@ -19,7 +18,7 @@ class CreateQRActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_qr)
-        initializeDBService()
+        initializeGoodsModuleService()
 
         val qrcodeData = intent.getStringExtra("qrcode")
         val bitmap = qrService.createQR(qrcodeData)
@@ -32,7 +31,7 @@ class CreateQRActivity : AppCompatActivity() {
 
     }
 
-    private fun initializeDBService() {
+    private fun initializeGoodsModuleService() {
         val component = DaggerGoodsComponent.builder()
             .goodsModule(GoodsModule())
             .build()

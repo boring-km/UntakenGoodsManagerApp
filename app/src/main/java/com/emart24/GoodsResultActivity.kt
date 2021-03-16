@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.emart24.component.DaggerGoodsComponent
 import com.emart24.service.GoodsModule
 import com.emart24.service.GoodsService
-import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_accept.*
 import javax.inject.Inject
 
 class GoodsResultActivity: AppCompatActivity() {
@@ -16,8 +16,9 @@ class GoodsResultActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
-        initializeDBService()
+        setContentView(R.layout.activity_accept)
+        initializeGoodsModuleService()
+
         val name = intent.getStringExtra("productName")
         val dateTime = intent.getStringExtra("dateTime")
         val qrcode = intent.getStringExtra("qrcode")
@@ -44,7 +45,7 @@ class GoodsResultActivity: AppCompatActivity() {
         }
     }
 
-    private fun initializeDBService() {
+    private fun initializeGoodsModuleService() {
         val component = DaggerGoodsComponent.builder()
             .goodsModule(GoodsModule())
             .build()

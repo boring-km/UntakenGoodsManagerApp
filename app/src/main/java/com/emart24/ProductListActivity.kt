@@ -1,56 +1,88 @@
 package com.emart24
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.emart24.adapter.ProductListAdapter
+import com.emart24.component.DaggerGoodsComponent
 import com.emart24.model.UnTakenGoods
+import com.emart24.service.GoodsModule
+import com.emart24.service.GoodsService
+import com.google.firebase.firestore.QuerySnapshot
 import kotlinx.android.synthetic.main.activity_list.*
 import java.util.*
+import javax.inject.Inject
+import android.os.HandlerThread
 
-class ProductListActivity: AppCompatActivity() {
+
+class ProductListActivity : AppCompatActivity() {
 
     private lateinit var adapter: ProductListAdapter
+    @Inject lateinit var goodsService: GoodsService
+    private lateinit var handler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+        initializeGoodsModuleService()
 
-        // TODO Firebase에서 데이터 가져오기
-        val resultList = Array<UnTakenGoods>(5) { i ->
-            UnTakenGoods("테스트 $i", "1234", "qr", "21년 3월 14일", false)
+        val resultList = ArrayList<UnTakenGoods>()
+
+        setHandler()
+        handler.post {
+            goodsService.findAllGoods({ qs: QuerySnapshot ->
+                qs.documents.forEach { ds ->
+                    resultList.add(ds.toObject(UnTakenGoods::class.java) as UnTakenGoods)
+                }
+                adapter.addItems(resultList)
+                adapter.notifyDataSetChanged()
+            }, {
+                Toast.makeText(applicationContext, "데이터 없음", Toast.LENGTH_SHORT).show()
+            })
         }
-        resultList[0] = UnTakenGoods("테스트 0", "1234", "qr", "21년 3월 14일", false)
-        resultList[1] = UnTakenGoods("테스트 1", "1111", "qr", "21년 3월 14일", false)
-        resultList[2] = UnTakenGoods("테스트 2", "2222", "qr", "21년 3월 14일", false)
-        resultList[3] = UnTakenGoods("테스트 3", "8887", "qr", "21년 3월 14일", false)
 
-        adapter = ProductListAdapter()
-        ProductListView.adapter = adapter
+        setListViewAdapter()
 
-        adapter.addItems(resultList)
-        adapter.notifyDataSetChanged()
-
-        editPhoneNumberView.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-            }
-
+        editPhoneNumberView.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
                 val filterText = s.toString()
                 val length = filterText.length
                 adapter.clear()
-                Arrays.stream(resultList).filter { item -> item.phone.substring(0, length) == filterText }.forEach { item ->
-                    adapter.addItem(item)
-                }
+                resultList.filter { item -> item.phone.substring(0, length) == filterText }
+                    .forEach { item ->
+                        adapter.addItem(item)
+                    }
                 adapter.notifyDataSetChanged()
             }
 
         })
+    }
+
+    private fun setHandler() {
+        val handlerThread = HandlerThread("android_handler")
+        handlerThread.start()
+        handler = Handler(handlerThread.looper)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.looper.quit()
+    }
+
+    private fun setListViewAdapter() {
+        adapter = ProductListAdapter()
+        ProductListView.adapter = adapter
+    }
+
+    private fun initializeGoodsModuleService() {
+        val component = DaggerGoodsComponent.builder()
+            .goodsModule(GoodsModule())
+            .build()
+        component.inject(this)
     }
 }
