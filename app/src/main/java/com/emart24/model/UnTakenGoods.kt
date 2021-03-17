@@ -26,7 +26,6 @@ class UnTakenGoods(): Parcelable {
         this.dateTime = dateTime
         this.accept = accept
     }
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeString(phone)
