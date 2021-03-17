@@ -21,5 +21,5 @@
 ### 2-2. 상품 등록 결과 화면
 ![img.png](screenshots/register_result.png)
 
-### 3. 삼품 QR 스캔 결과 화면
+### 3. 상품 QR 스캔 결과 화면
 ![img.png](screenshots/result.png)
