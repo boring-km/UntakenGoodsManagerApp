@@ -1,11 +1,14 @@
 package com.emart24.service
 
 import android.annotation.SuppressLint
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.emart24.model.UnTakenGoods
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.security.MessageDigest
@@ -20,7 +23,15 @@ class GoodsService {
             .addOnFailureListener(onFailureListener)
     }
 
-    fun findGoods(qrCode: String, onSuccessListener: OnSuccessListener<DocumentSnapshot>, onFailureListener: OnFailureListener) {
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun findAllGoods(onSuccessListener: OnSuccessListener<QuerySnapshot>, onFailureListener: OnFailureListener) {
+        db.collection("goods")
+            .get()
+            .addOnSuccessListener(onSuccessListener)
+            .addOnFailureListener(onFailureListener)
+    }
+
+    fun findGoodsByQR(qrCode: String, onSuccessListener: OnSuccessListener<DocumentSnapshot>, onFailureListener: OnFailureListener) {
         db.collection("goods")
             .document(qrCode)
             .get()

@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical" android:background="#FFF4CE">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="20dp" android:padding="8dp"
+            android:background="#CDFFFFFF">
+        <TextView
+                android:text="전화번호"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView8" android:layout_weight="1"
+                android:textAlignment="center" android:textColor="#000000" android:textSize="20sp"
+                android:layout_marginEnd="10dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editPhoneNumberView" android:layout_weight="1" android:inputType="numberDecimal"
+                android:hint="전화번호 뒷자리" android:drawableEnd="@android:drawable/ic_menu_search"/>
+    </LinearLayout>
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_marginTop="10dp" android:background="#CDFFFFFF"
+            android:padding="8dp" android:id="@+id/ProductListView"/>
+</LinearLayout>

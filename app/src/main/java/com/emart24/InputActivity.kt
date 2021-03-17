@@ -22,7 +22,7 @@ class InputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        initializeDBService()
+        initializeGoodsModuleService()
 
         registerButton.setOnClickListener {
 
@@ -49,7 +49,7 @@ class InputActivity : AppCompatActivity() {
         return dateTimeFormat.format(Date(System.currentTimeMillis()))
     }
 
-    private fun initializeDBService() {
+    private fun initializeGoodsModuleService() {
         val component = DaggerGoodsComponent.builder()
             .goodsModule(GoodsModule())
             .build()

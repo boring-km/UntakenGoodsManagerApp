@@ -21,7 +21,7 @@ class ScanQRActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan_qr)
-        initializeDBService()
+        initializeGoodsModuleService()
         qrService.scanning(this)
 
         rescan_Button.setOnClickListener {
@@ -39,7 +39,7 @@ class ScanQRActivity : AppCompatActivity() {
             Toast.makeText(this, "인식못함", Toast.LENGTH_SHORT).show()
         } else {
             val qrCode = result.contents
-            goodsService.findGoods(
+            goodsService.findGoodsByQR(
                 qrCode, { documentSnapshot ->
                     val intent = Intent(this@ScanQRActivity, GoodsResultActivity::class.java)
                     val dataMap: Map<String, Any>? = documentSnapshot.data
@@ -64,7 +64,7 @@ class ScanQRActivity : AppCompatActivity() {
         }
     }
 
-    private fun initializeDBService() {
+    private fun initializeGoodsModuleService() {
         val component = DaggerGoodsComponent.builder()
             .goodsModule(GoodsModule())
             .build()
