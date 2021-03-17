@@ -11,4 +11,5 @@ interface GoodsComponent {
     fun inject(activity: GoodsResultActivity)
     fun inject(activity: CreateQRActivity)
     fun inject(activity: ProductListActivity)
+    fun inject(activity: ProductDetailActivity)
 }

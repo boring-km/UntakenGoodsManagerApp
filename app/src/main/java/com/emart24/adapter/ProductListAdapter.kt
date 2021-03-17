@@ -21,7 +21,7 @@ class ProductListAdapter: BaseAdapter(), Filterable {
         return filteredList.size
     }
 
-    override fun getItem(position: Int): Any {
+    override fun getItem(position: Int): UnTakenGoods {
         return filteredList[position]
     }
 
@@ -42,7 +42,7 @@ class ProductListAdapter: BaseAdapter(), Filterable {
         val acceptView = convertView.findViewById<TextView>(R.id.IsAcceptTextView)
 
         val item = filteredList[position]
-        dateView.text = item.dateTime
+        dateView.text = item.dateTime.substring(2, 13)
         nameView.text = item.name
         if (item.accept) {
             acceptView.text = "수령"
