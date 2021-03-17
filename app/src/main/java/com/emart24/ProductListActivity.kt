@@ -1,5 +1,6 @@
 package com.emart24
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
@@ -35,7 +36,8 @@ class ProductListActivity : AppCompatActivity() {
         handler.post {
             goodsService.findAllGoods({ qs: QuerySnapshot ->
                 qs.documents.forEach { ds ->
-                    resultList.add(ds.toObject(UnTakenGoods::class.java) as UnTakenGoods)
+                    val goods = ds.toObject(UnTakenGoods::class.java) as UnTakenGoods
+                    resultList.add(goods)
                 }
                 adapter.addItems(resultList)
                 adapter.notifyDataSetChanged()
@@ -77,6 +79,13 @@ class ProductListActivity : AppCompatActivity() {
     private fun setListViewAdapter() {
         adapter = ProductListAdapter()
         ProductListView.adapter = adapter
+        ProductListView.setOnItemClickListener { parent, view, position, id ->
+            val index = adapter.getItemId(position).toInt()
+            val product: UnTakenGoods = adapter.getItem(index)
+            val intent = Intent(this@ProductListActivity, ProductDetailActivity::class.java)
+            intent.putExtra("product", product)
+            startActivity(intent)
+        }
     }
 
     private fun initializeGoodsModuleService() {

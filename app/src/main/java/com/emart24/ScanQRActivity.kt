@@ -50,6 +50,7 @@ class ScanQRActivity : AppCompatActivity() {
                             intent.putExtra("dateTime", dataMap.getOrDefault("dateTime", "").toString())
                             intent.putExtra("qrcode", dataMap.getOrDefault("qrcode", "").toString())
                             startActivity(intent)
+                            finish()
                         } else {
                             Toast.makeText(this, "해당 상품 이미 수령함", Toast.LENGTH_SHORT).show()
                         }

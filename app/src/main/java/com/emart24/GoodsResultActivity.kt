@@ -1,5 +1,6 @@
 package com.emart24
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +43,11 @@ class GoodsResultActivity: AppCompatActivity() {
                         acceptButton.text = "상품 수령 실패(재시도)"
                     })
             }
+        }
+
+        rescanButton.setOnClickListener {
+            finish()
+            startActivity(Intent(this@GoodsResultActivity, ScanQRActivity::class.java))
         }
     }
 

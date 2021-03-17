@@ -9,11 +9,11 @@
             android:text="21년 03월 14일"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" android:id="@+id/DateTextView" android:layout_weight="1"
-            android:gravity="center_vertical" android:textAlignment="center" android:textColor="#000000"
-            android:paddingStart="8dp" android:paddingEnd="8dp"/>
+            android:gravity="center" android:textAlignment="center" android:textColor="#000000"
+            android:paddingStart="8dp" android:paddingEnd="8dp" android:layout_gravity="center"/>
     <TextView
             android:text="바나나우유"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="match_parent" android:id="@+id/ProductNameTextView" android:layout_weight="3"
             android:gravity="center_vertical" android:background="#C8EFA7" android:textColor="#000000"
             android:paddingStart="8dp" android:paddingEnd="8dp"/>
@@ -21,5 +21,5 @@
             android:text="미수령"
             android:layout_width="50dp"
             android:layout_height="match_parent" android:id="@+id/IsAcceptTextView" android:layout_weight="1"
-            android:textAlignment="center" android:gravity="center_vertical" android:textColor="#000000"/>
+            android:textAlignment="center" android:gravity="center" android:textColor="#000000"/>
 </LinearLayout>

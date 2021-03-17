@@ -8,6 +8,7 @@ import com.emart24.component.DaggerGoodsComponent
 import com.emart24.model.UnTakenGoods
 import com.emart24.service.GoodsService
 import com.emart24.service.GoodsModule
+import com.emart24.service.QRService
 import kotlinx.android.synthetic.main.activity_register.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -15,8 +16,8 @@ import javax.inject.Inject
 
 class InputActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var goodsService: GoodsService
+    @Inject lateinit var goodsService: GoodsService
+    @Inject lateinit var qrService: QRService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class InputActivity : AppCompatActivity() {
             val productName: String = productNameEditText.text.toString()
             val last4DigitsOfPhoneNumber: String = phoneEditText.text.toString()
             val nowDateTime = getNowDateTime()
-            val qrData = goodsService.generateQRCode(last4DigitsOfPhoneNumber, nowDateTime)
+            val qrData = qrService.generateQRCode(last4DigitsOfPhoneNumber, nowDateTime)
             val unTakenGoods = UnTakenGoods(productName, last4DigitsOfPhoneNumber, qrData, nowDateTime, false)   // 서버로 전송
 
             goodsService.registerGoods(unTakenGoods, {

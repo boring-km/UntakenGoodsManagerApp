@@ -47,14 +47,4 @@ class GoodsService {
             .addOnFailureListener(onFailureListener)
     }
 
-    @SuppressLint("SimpleDateFormat")
-    fun generateQRCode(last4DigitsOfPhoneNumber: String, dateTime: String): String {
-        val sha256 = MessageDigest.getInstance("SHA-256")
-        val qrCodeByteArray = "$last4DigitsOfPhoneNumber$dateTime".toByteArray()
-        sha256.update(qrCodeByteArray)
-        val qrCode = Arrays.toString(sha256.digest())
-        println("QR Code: $qrCode, QR Code Size: ${qrCode.length}")
-        return qrCode
-    }
-
 }
