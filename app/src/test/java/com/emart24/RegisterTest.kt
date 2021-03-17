@@ -1,6 +1,6 @@
 package com.emart24
 
-import com.emart24.service.GoodsService
+import com.emart24.service.QRService
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 import java.text.SimpleDateFormat
@@ -13,8 +13,8 @@ class RegisterTest {
         val testProductName = "0644"
         val dateTimeFormat = SimpleDateFormat("YYYY:MM:DD hh:mm:ss")
         val dateTime = dateTimeFormat.format(Date(System.currentTimeMillis()))
-        val goodsService = GoodsService()
-        val qrCode = goodsService.generateQRCode(testProductName, dateTime)
+        val qrService = QRService()
+        val qrCode = qrService.generateQRCode(testProductName, dateTime)
         assertNotNull(qrCode)
     }
 }
