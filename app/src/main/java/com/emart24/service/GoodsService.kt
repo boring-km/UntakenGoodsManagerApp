@@ -47,4 +47,26 @@ class GoodsService {
             .addOnFailureListener(onFailureListener)
     }
 
+    fun changeAccept(qrcode: String, accept: Boolean, onSuccessListener: OnSuccessListener<Void>, onFailureListener: OnFailureListener) {
+        db.collection("goods")
+            .document(qrcode)
+            .update("accept", !accept)
+            .addOnSuccessListener(onSuccessListener)
+            .addOnFailureListener(onFailureListener)
+    }
+
+    fun deleteItem(goods: UnTakenGoods, onSuccessListener: OnSuccessListener<Void>, onFailureListener: OnFailureListener) {
+        db.collection("trash").document(goods.qrcode).set(goods)
+            .addOnSuccessListener {
+                db.collection("goods")
+                    .document(goods.qrcode)
+                    .delete()
+                    .addOnSuccessListener(onSuccessListener)
+                    .addOnFailureListener(onFailureListener)
+            }
+            .addOnFailureListener(onFailureListener)
+
+
+    }
+
 }

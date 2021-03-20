@@ -29,6 +29,16 @@ class ProductListAdapter: BaseAdapter(), Filterable {
         return position.toLong()
     }
 
+    fun changeAccept(position: Int) {
+        val goods = list[position]
+        goods.accept = !goods.accept
+        list[position] = goods
+    }
+
+    fun deleteItem(position: Int) {
+        list.removeAt(position)
+    }
+
 
     override fun getView(position: Int, view: View?, viewGroup: ViewGroup): View {
         val context = viewGroup.context
