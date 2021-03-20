@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.emart24.component.DaggerGoodsComponent
 import com.emart24.model.UnTakenGoods
+import com.emart24.service.CommonService
 import com.emart24.service.GoodsService
 import com.emart24.service.GoodsModule
 import com.emart24.service.QRService
@@ -18,6 +19,7 @@ class InputActivity : AppCompatActivity() {
 
     @Inject lateinit var goodsService: GoodsService
     @Inject lateinit var qrService: QRService
+    @Inject lateinit var commonService: CommonService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +29,9 @@ class InputActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
 
-
             val productName: String = productNameEditText.text.toString()
             val last4DigitsOfPhoneNumber: String = phoneEditText.text.toString()
-            val nowDateTime = getNowDateTime()
+            val nowDateTime = commonService.getNowDateTime()
             val qrData = qrService.generateQRCode(last4DigitsOfPhoneNumber, nowDateTime)
             val unTakenGoods = UnTakenGoods(productName, last4DigitsOfPhoneNumber, qrData, nowDateTime, false)   // 서버로 전송
 
@@ -43,11 +44,6 @@ class InputActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "등록 실패", Toast.LENGTH_SHORT).show()
             })
         }
-    }
-
-    private fun getNowDateTime(): String {
-        val dateTimeFormat = SimpleDateFormat("YYYY년 MM월 dd일 hh시 mm분")
-        return dateTimeFormat.format(Date(System.currentTimeMillis()))
     }
 
     private fun initializeGoodsModuleService() {

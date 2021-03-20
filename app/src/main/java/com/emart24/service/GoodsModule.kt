@@ -16,4 +16,9 @@ class GoodsModule {
         return QRService()
     }
 
+    @Provides
+    fun provideCommonService(): CommonService {
+        return CommonService()
+    }
+
 }
